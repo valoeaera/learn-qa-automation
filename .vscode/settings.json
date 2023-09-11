@@ -1,0 +1,29 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "editor.detectIndentation": true,
+  "editor.tabSize": 4,
+  "peacock.color": "#23bf7d",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#3adb97",
+    "activityBar.background": "#3adb97",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#aa5de1",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#3adb97",
+    "statusBar.background": "#23bf7d",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#1b9461",
+    "statusBarItem.remoteBackground": "#23bf7d",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#23bf7d",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#23bf7d99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "cSpell.words": ["getbool", "userdata"]
+}
