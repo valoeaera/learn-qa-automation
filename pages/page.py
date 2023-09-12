@@ -7,7 +7,7 @@ class Page:
         self.wait = wait
         self.baseurl = baseurl
 
-    def error(expect, actual, is_exact):
+    def error(self, expect, actual, is_exact):
         if is_exact:
             return f"Error EXACT_MATCH_FAILED: Expected {expect}, got {actual}."
         else:

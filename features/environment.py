@@ -26,20 +26,24 @@ def before_scenario(context, scenario):
         options.add_argument("window-size=1280,1024")
 
     # Set Base URL dynamically if it is set in userdata
-    base_url = context.config.userdata.getbool(
+    baseurl = context.config.userdata.getbool(
         "baseurl", default="https://www.tcgplayer.com"
     )
 
     # Configure Application
     context.driver = webdriver.Chrome(service=service, options=options)
     context.driver.wait = WebDriverWait(context.driver, timeout=10)
-    context.app = Application(context.driver, context.driver.wait, base_url)
+    context.app = Application(
+        driver=context.driver, wait=context.driver.wait, baseurl=baseurl
+    )
 
-    print(f"Started Scenario: {scenario}, Testing Against: {base_url}.")
+    print(f"Started Scenario: {scenario.name}, Testing Against: {baseurl}.")
 
 
 def before_step(context, step):
-    print(f"Started Step: {step}")
+    print(f"Started Step: {step.name}")
+    context.driver.get(context.app.baseurl)
+    context.driver.maximize_window()
 
 
 def after_step(context, step):
@@ -52,6 +56,6 @@ def after_step(context, step):
         )
 
 
-def after_scenario(context, step):
+def after_scenario(context):
     context.driver.delete_all_cookies()
     context.driver.quit()
